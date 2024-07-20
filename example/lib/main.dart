@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -24,9 +25,219 @@ class _MyAppState extends State<MyApp> {
   String _jsonInput = '';
   String? _selectedPrinter;
 
+  final Map<String, dynamic> _SAMPLE_JSON_INSTRUCTION_ = {
+    "startX": 0,
+    "startY": 0,
+    "data": [
+      {
+        "startX": 0,
+        "endX": 190,
+        "lineSpacing": 0,
+        "imagePath": "C:\\image.png",
+        "imageWidth": 30,
+        "imageHeight": 30,
+        "align": "center",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 190,
+        "text": "Hello,",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": true
+      },
+      {
+        "startX": 20,
+        "endX": 80,
+        "text": "My Name is ",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "ABDUL AHAD",
+        "fontSize": 8,
+        "fontWeight": "Bold",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Item",
+        "fontSize": 8,
+        "fontWeight": "Bold",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "Amount",
+        "fontSize": 8,
+        "fontWeight": "Bold",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 1",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "200.00",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "23568.99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "23568.99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "23568.99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "23568.99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "Product 99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "23568.99",
+        "fontSize": 8,
+        "fontWeight": "Normal",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      },
+      {
+        "startX": 0,
+        "endX": 80,
+        "text": "TOTAL",
+        "fontSize": 8,
+        "fontWeight": "Bold",
+        "lineSpacing": 0,
+        "align": "left",
+        "isNewLine": false
+      },
+      {
+        "startX": 81,
+        "endX": 190,
+        "text": "99999.99",
+        "fontSize": 8,
+        "fontWeight": "Bold",
+        "lineSpacing": 0,
+        "align": "right",
+        "isNewLine": true
+      }
+    ]
+  };
+
+  TextEditingController _jsonD = TextEditingController();
+
   @override
   void initState() {
     super.initState();
+    _jsonD.text = jsonEncode(_SAMPLE_JSON_INSTRUCTION_).toString();
     _loadPrinters();
   }
 
@@ -46,6 +257,8 @@ class _MyAppState extends State<MyApp> {
       log('No printer selected.');
       return;
     }
+
+    _jsonInput = _jsonD.text;
 
     if (_jsonInput.isEmpty) {
       log('Please enter JSON data.');
@@ -116,16 +329,17 @@ class _MyAppState extends State<MyApp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: TextField(
+                  controller: _jsonD,
                   maxLines: 10,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter JSON Data',
                   ),
-                  onChanged: (value) {
-                    setState(() {
-                      _jsonInput = value;
-                    });
-                  },
+                  // onChanged: (value) {
+                  //   setState(() {
+                  //     _jsonInput = value;
+                  //   });
+                  // },
                 ),
               ),
               SizedBox(height: 20),
