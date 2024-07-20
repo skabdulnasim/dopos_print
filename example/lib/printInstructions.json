@@ -1,0 +1,220 @@
+{
+  "startX": 0,
+  "startY": 0,
+  "data": [
+    {
+      "startX": 0,
+      "endX": 190,
+      "lineSpacing": 0,
+      "imagePath": "C:\\image.png",
+      "imageWidth": 30,
+      "imageHeight": 30,
+      "align": "center",
+      "isNewLine": true
+    },
+    {
+      "startX": 0,
+      "endX": 190,
+      "text": "Hello,",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": true
+    },
+    {
+      "startX": 20,
+      "endX": 80,
+      "text": "My Name is ",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "ABDUL AHAD",
+      "fontSize": 8,
+      "fontWeight": "Bold",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Item",
+      "fontSize": 8,
+      "fontWeight": "Bold",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "Amount",
+      "fontSize": 8,
+      "fontWeight": "Bold",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 1",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "200.00",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "23568.99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "23568.99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "23568.99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "23568.99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "Product 99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "23568.99",
+      "fontSize": 8,
+      "fontWeight": "Normal",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    },
+
+
+    {
+      "startX": 0,
+      "endX": 80,
+      "text": "TOTAL",
+      "fontSize": 8,
+      "fontWeight": "Bold",
+      "lineSpacing": 0,
+      "align": "left",
+      "isNewLine": false
+    },
+    {
+      "startX": 81,
+      "endX": 190,
+      "text": "99999.99",
+      "fontSize": 8,
+      "fontWeight": "Bold",
+      "lineSpacing": 0,
+      "align": "right",
+      "isNewLine": true
+    }
+  ]
+}
