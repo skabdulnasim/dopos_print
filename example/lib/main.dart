@@ -300,31 +300,54 @@ class _MyAppState extends State<MyApp> {
               SizedBox(height: 20),
               if (_printers.isNotEmpty)
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: DropdownButton<String>(
-                    hint: const Text('Select Printer'),
-                    value: _selectedPrinter,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        _selectedPrinter = newValue;
-                      });
-                    },
-                    items: _printers.map((printer) {
-                      final printerIndex = printer.keys.first;
-                      final printerName = printer.values.first;
-                      return DropdownMenuItem<String>(
-                        value: printerIndex,
-                        child: Row(
-                          children: <Widget>[
-                            const Icon(Icons.print),
-                            const SizedBox(width: 10),
-                            Text(printerName),
-                          ],
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    // child: DropdownButton<String>(
+                    //   hint: const Text('Select Printer'),
+                    //   value: _selectedPrinter,
+                    //   onChanged: (String? newValue) {
+                    //     setState(() {
+                    //       _selectedPrinter = newValue;
+                    //     });
+                    //   },
+                    //   items: _printers.map((printer) {
+                    //     final printerIndex = printer.keys.first;
+                    //     final printerName = printer.values.first;
+                    //     return DropdownMenuItem<String>(
+                    //       value: printerIndex,
+                    //       child: Row(
+                    //         children: <Widget>[
+                    //           const Icon(Icons.print),
+                    //           const SizedBox(width: 10),
+                    //           Text(printerName),
+                    //         ],
+                    //       ),
+                    //     );
+                    //   }).toList(),
+                    // ),
+                    child: DropdownButton<String>(
+                      hint: const Text('Select Printer'),
+                      value: _selectedPrinter,
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          _selectedPrinter = newValue;
+                        });
+                      },
+                      items: _printers.map((printer) {
+                        final printerIndex = printer.keys.first;
+                        final printerName = printer.values.first;
+                        log("$printerIndex===>$printerName");
+                        return DropdownMenuItem<String>(
+                          value: printerIndex, // Ensure printerIndex is unique
+                          child: Row(
+                            children: <Widget>[
+                              const Icon(Icons.print),
+                              const SizedBox(width: 10),
+                              Text(printerName),
+                            ],
+                          ),
+                        );
+                      }).toList(),
+                    )),
               SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
